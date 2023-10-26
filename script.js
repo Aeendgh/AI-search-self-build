@@ -1,5 +1,7 @@
 const ul = document.querySelector("ul div"),
 inputbox = document.querySelector("input");
+const suggestionEl = document.querySelector(".suggestion-container");
+
 
 const Button = document.querySelector("button");
 let tags = [];
@@ -34,7 +36,8 @@ var vitualtypeRes;
 function createTag(){
     ul.querySelectorAll("li").forEach(li => li.remove(),);  
     tags.forEach(tag =>{
-        let Litag = `<li class="defualt">${tag}<img src="assets/images/xIcon.svg" onclick="remove(this, '${tag}')" alt=""></li>`;
+        // let Litag = `<li class="defualt">${tag}<img src="assets/images/xIcon.svg" onclick="remove(this, '${tag}')" alt=""></li>`;
+        let Litag = `<li class="defualt">${tag}<span class="XIcon" onclick="remove(this, '${tag}')">×</span></li>`;
         ul.insertAdjacentHTML("afterbegin", Litag);
     });
 }

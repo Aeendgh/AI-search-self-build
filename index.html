@@ -14,8 +14,10 @@
                 <div class="maininput">
                         <ul class="search">
                             <input type="text">
+                            <span class="suggestion-container"></span>
                             <div class="tags">
-                                <li class="defualt">گزارش <img src="assets/images/xIcon.svg" alt=""></li>
+                                <!-- <li class="defualt">گزارش <img src="assets/images/xIcon.svg" alt=""></li> -->
+                                <li class="defualt">گزارش <span class="XIcon">×</span></li>
                             </div>                            
                         </ul>
                 </div>
@@ -24,7 +26,7 @@
 
             <!-- </form> -->
     </div>
-    <div class="hidenform" style="display:none;">
+    <div class="hidenform" style="display:block;">
         <form id="myForm">
             <!-- virtual type check box -->
             <input type="checkbox" id="virtualTypeBox" name="virtualTypeBox" onchange="toggleDateInput('virtualTypeBox', 'virtualTypeBoxValue')">virtualType<br>
