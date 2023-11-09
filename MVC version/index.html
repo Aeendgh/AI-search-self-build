@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link type="text/css" rel="stylesheet" href="jalalidatepicker.min.css" />
+    <script type="text/javascript" src="jalalidatepicker.min.js"></script> 
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>گزارشگیری توسط AI </h2>
+        <!-- <form action="#"> -->
+        <script>
+            jalaliDatepicker.startWatch();
+        </script>
+        <div class="form">
+            <div class="maininput">
+                    <ul class="search">
+                    <input type="text" id="DateEnd" placeholder="تاریخ . . .  10/02/1400" data-jdp>
+                    <input type="text" id="DateStart" onchange="displayDateEnd()" placeholder="تاریخ . . .  10/02/1400" autofocus data-jdp>
+                    <input type="text" id="inputmain">
+                    <span class="suggestion-container"></span>
+                    <div class="tags">
+                        <li class="defualt">گزارش <span class="XIcon">×</span></li>
+                    </div>
+                </ul>
+            </div>
+        <button onclick="findingVIrtualtype(),findingBodyShop(),findingPaintShop(),findingTrimShop(),findingFinalShop(),findingColorCode()" name="someName" value="someValue"><img src="~/assets/images/search.svg" alt=""></button>
+        </div>
+    </div>
+    <script src="AISearch.js"></script>  
+</body>
+</html>
