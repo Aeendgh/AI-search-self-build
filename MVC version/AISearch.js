@@ -60,13 +60,14 @@ var FinalObj = ["final", "Final", "FINAL", "فاینال", "کنترلنهایی
 var ParkingObj = ["PARKING", "parking", "Parking", "پارکینگ", "ورودبهپارکینگ"];
 var TransObj = ["trans", "TRANS", "Trans", "حمل", "حمل شده ها"];
 var WorkShopObj = [...BodyShopObj,...PaintShopObj,...TrimShopObj,...FinalObj,...ParkingObj,...TransObj];
-
+var finalvalue = [];
 function createTag(){
     ul.querySelectorAll("li").forEach(li => li.remove(),);
-    tags.forEach(tag => {
-        let Litag = `<li class="defualt">${tag}<span class="XIcon" onclick="remove(this, '${tag}')">×</span></li>`;
-        ul.insertAdjacentHTML("afterbegin", Litag);
-    });
+    // tags.forEach(tag => {
+    //     // let Litag = `<li class="defualt">${tag}<span class="XIcon" onclick="remove(this, '${tag}')">×</span></li>`;
+    //     // ul.insertAdjacentHTML("afterbegin", Litag);
+    //     // finalvalue = tag + finalvalue;
+    // });
 
 }
 function remove(element, tag){
@@ -80,12 +81,13 @@ function remove(element, tag){
 }
 function addList(e){
     if (e.key == "Enter") {
-        let tag = e.target.value.replace(/\s/g, '-');
+        let tag = e.target.value;
         if (tag.length > 1 && !tags.includes(tag)) {
             tag.split(' ').forEach(tag => {
                 tags.push(tag);
                 console.log(tags);
                 createTag();
+                console.log(finalvalue);
                 findingWorkShop();
             });
             inputbox.addEventListener('Enter', inputbox.value = "");
@@ -185,7 +187,6 @@ function findingTrimShop() {
         return TrimShopObj.includes(e);
     });
     if (CheckTrim.length > 0) {
-
         document.getElementById("trimshop").checked = true;
         if (DateInputEnd.value == "") {
             document.getElementById("SameDatePL").checked = true;
@@ -202,10 +203,9 @@ function findingFinalShop() {
         // document.getElementsByName("virtualTypeBoxValue")[0].value = "";
         //document.getElementsByName("TopcoatDate")[0].value = "1402/08/07";
         document.getElementById("final").checked = true;
-
     }
 }
-console.log(WorkShopObj);
+// console.log(WorkShopObj);
 function findingWorkShop(){
     var DateInputStart = document.getElementById("DateStart"),
     DateInputEnd = document.getElementById("DateEnd");
@@ -214,10 +214,10 @@ function findingWorkShop(){
     });
     if (CheckWorkShop.length > 0) {
         DateInputStart.style.display = "block";
-    }else{
-        DateInputStart.style.display = "none";
     }
-    
+    else{
+        DateInputStart.style.display = "none";
+    } 
 }
 
 function clearForm() {
